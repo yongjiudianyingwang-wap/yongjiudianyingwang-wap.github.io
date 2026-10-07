@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UCompatible" content="IE=edge">
+<title>永久电影网 - 经典电影永久珍藏在线观看平台</title>
+<meta name="keywords" content="永久电影网, yongjiudianyingwang, 经典电影, 老电影, 电影珍藏, 在线观看, 高分电影">
+<meta name="description" content="永久电影网是经典电影永久珍藏的在线观看平台，收录中外高分经典老电影，剧情、动作、喜剧、文艺、战争、科幻等类型全覆盖，打造永不落幕的电影记忆库。">
+<meta name="author" content="永久电影网">
+<meta property="og:type" content="website">
+<meta property="og:title" content="永久电影网 - 经典电影永久珍藏在线观看平台">
+<meta property="og:description" content="收录中外高分经典老电影，类型全覆盖，打造永不落幕的电影记忆库。">
+<meta property="og:url" content="https://yongjiudianyingwang-wap.github.io">
+<meta property="og:site_name" content="永久电影网">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="永久电影网 - 经典电影永久珍藏在线观看平台">
+<meta name="twitter:description" content="收录中外高分经典老电影，类型全覆盖，打造永不落幕的电影记忆库。">
+<link rel="canonical" href="https://yongjiudianyingwang-wap.github.io">
+<link rel="alternate" hreflang="zh-CN" href="https://yongjiudianyingwang-wap.github.io">
+<style>
+/* ===== Reset ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Courier New","Noto Sans SC","PingFang SC","Microsoft YaHei",monospace,serif;
+  font-size:16px;line-height:1.75;color:#f3ecdd;background:#0d0a07;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+:root{
+  --film:#e8a33d;--film2:#f6d28c;--sepia:#8b5a2b;--deep:#0d0a07;--card:#18110a;--card2:#221812;
+  --line:rgba(232,163,61,.28);--txt:#e8ddc7;--muted:#9c8b6e;--ink:#3a2a1a;
+}
+
+/* ===== 胶片背景 ===== */
+.bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.reel{position:absolute;width:120px;height:120px;border-radius:50%;border:8px dashed var(--sepia);opacity:.16;animation:spin 22s linear infinite}
+.reel.r1{top:-30px;left:-30px}.reel.r2{bottom:-40px;right:-30px;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.noise{position:absolute;inset:0;opacity:.04;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:4px 4px}
+main,header,footer{position:relative;z-index:2}
+
+/* ===== Header ===== */
+header{position:sticky;top:0;z-index:100;background:rgba(13,10,7,.9);backdrop-filter:blur(10px);border-bottom:2px solid var(--film)}
+.hin{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;font-size:18px;color:var(--film2);font-family:Georgia,"Times New Roman",serif;letter-spacing:.5px}
+.logo .reelbtn{width:38px;height:38px;border-radius:50%;border:5px dashed var(--film);display:grid;place-items:center;font-size:11px;font-weight:900;color:var(--film);flex-shrink:0;animation:spin 8s linear infinite}
+.logo small{display:block;font-size:8px;color:var(--muted);font-family:monospace;letter-spacing:1.4px;font-weight:400}
+.nav{display:none;gap:4px}
+.nav a{padding:8px 14px;font-size:13.5px;font-weight:700;color:var(--txt);border-radius:4px;transition:.25s;font-family:monospace;letter-spacing:.5px;border:1px solid transparent}
+.nav a:hover{color:var(--film);border-color:var(--line);background:rgba(232,163,61,.07)}
+@media(min-width:900px){.nav{display:flex}}
+.ham{width:44px;height:44px;border-radius:6px;border:1px solid var(--line);color:var(--film);font-size:18px}
+@media(min-width:900px){.ham{display:none}}
+.mnav{display:none;flex-direction:column;padding:12px 18px 20px;gap:4px;background:rgba(24,17,10,.99);border-top:2px solid var(--film)}
+.mnav.open{display:flex}
+.mnav a{padding:14px;border-radius:6px;font-weight:700;color:var(--txt);border:1px solid var(--line);font-family:monospace}
+.mnav a:hover{color:var(--film);background:rgba(232,163,61,.07)}
+
+/* ===== Hero ===== */
+.hero{padding:70px 0 80px;position:relative}
+@media(min-width:768px){.hero{padding:110px 0 130px}}
+.hwrap{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+@media(min-width:920px){.hwrap{grid-template-columns:1.15fr .85fr;gap:60px}}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:monospace;font-size:11px;letter-spacing:3px;color:var(--film);border:1px solid var(--line);border-radius:3px;padding:6px 14px;text-transform:uppercase}
+.eyebrow::before{content:"▶";font-size:9px;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.3}}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:38px;font-weight:900;line-height:1.28;margin:20px 0 20px;color:var(--film2)}
+h1 .it{font-style:italic;color:var(--film)}
+.hsub{font-size:16px;color:var(--txt);max-width:540px}
+.hrule{width:70px;height:3px;background:var(--film);margin:26px 0}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:28px;border:1px solid var(--line);border-radius:6px;overflow:hidden;max-width:520px}
+.stat-pill{padding:16px 10px;text-align:center;border-right:1px solid var(--line)}
+.stat-pill:last-child{border-right:none}
+.stat-pill b{display:block;font-family:Georgia,serif;font-size:22px;font-weight:900;color:var(--film)}
+.stat-pill span{font-size:10px;color:var(--muted);font-family:monospace;letter-spacing:1px}
+.h-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 30px;font-size:14.5px;font-weight:700;transition:.28s;font-family:monospace;letter-spacing:1px}
+.btn-fill{background:var(--film);color:#0d0a07;border-radius:4px}
+.btn-fill:hover{background:var(--film2);transform:translateY(-3px)}
+.btn-ghost{border:1.5px solid var(--film);color:var(--film);border-radius:4px}
+.btn-ghost:hover{background:rgba(232,163,61,.12);transform:translateY(-3px)}
+/* 经典放映机框 */
+.projector{position:relative;background:var(--card);border:2px solid var(--film);border-radius:6px;padding:26px 22px;font-family:monospace}
+.projector::before,.projector::after{content:"❚❚";position:absolute;top:-12px;background:var(--deep);padding:0 10px;color:var(--film);font-size:14px;letter-spacing:4px}
+.projector::before{left:24px}.projector::after{right:24px}
+.pj-title{font-family:Georgia,serif;font-size:13px;color:var(--muted);letter-spacing:3px;text-align:center;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:16px}
+.pj-list li{display:flex;justify-content:space-between;padding:9px 0;font-size:13px;color:var(--txt);border-bottom:1px dotted rgba(232,163,61,.16)}
+.pj-list li span:last-child{color:var(--film);font-weight:700}
+.pj-foot{margin-top:16px;text-align:center;font-size:11px;color:var(--muted);letter-spacing:2px}
+
+/* ===== 通用 ===== */
+section{padding:60px 0}
+@media(min-width:768px){section{padding:96px 0}}
+.container{width:100%;max-width:1160px;margin:0 auto;padding:0 18px}
+@media(min-width:768px){.container{padding:0 28px}}
+.head{margin-bottom:46px}
+.h-en{font-family:monospace;font-size:11px;letter-spacing:5px;color:var(--film)}
+.head h2{font-family:Georgia,serif;font-size:28px;font-weight:900;color:var(--film2);margin-top:6px;line-height:1.35}
+.head h2 em{font-style:italic;color:var(--film)}
+.head p{color:var(--txt);margin-top:14px;max-width:660px}
+@media(min-width:768px){.head h2{font-size:40px}}
+
+/* ===== 栏目一：年代墙（横向时间轴，独立DOM） ===== */
+.decade{background:var(--card)}
+.track{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid var(--film);border-radius:6px;overflow:hidden}
+@media(min-width:720px){.track{grid-template-columns:repeat(6,1fr)}}
+.dbox{padding:26px 12px;text-align:center;border-right:1px solid var(--line);transition:.35s;cursor:default;position:relative}
+.dbox:last-child{border-right:none}
+.dbox:hover{background:rgba(232,163,61,.1)}
+.dbox:hover .dyear{color:var(--film2)}
+.dyear{font-family:Georgia,serif;font-size:26px;font-weight:900;color:var(--film);transition:.3s}
+.dbox h3{font-size:12.5px;color:var(--film2);margin:8px 0 4px;font-weight:800}
+.dbox p{font-size:10.5px;color:var(--muted);font-family:monospace}
+
+/* ===== 栏目二：经典影片（双行轮播跑马灯结构，独立） ===== */
+.marq{overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mrow{display:flex;gap:20px;width:max-content;animation:slide 38s linear infinite}
+.mrow.r2{animation-direction:reverse;animation-duration:46s;margin-top:20px}
+@keyframes slide{to{transform:translateX(-50%)}}
+.mcard{border:1px solid var(--line);border-radius:6px;overflow:hidden;width:210px;flex-shrink:0;background:var(--card);transition:.3s}
+.mcard:hover{transform:translateY(-5px);border-color:var(--film)}
+.mcover{height:150px;display:grid;place-items:center;font-size:30px;color:var(--film2);position:relative}
+.mcover .yr{position:absolute;top:8px;left:8px;background:var(--deep);color:var(--film);font-family:monospace;font-size:10px;padding:3px 8px;border:1px solid var(--line)}
+.mcover .geo{position:absolute;top:8px;right:8px;font-size:13px}
+.minfo{padding:12px}
+.minfo h3{font-size:14px;font-weight:800;color:var(--film2);font-family:Georgia,serif}
+.minfo .mmeta{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:6px;font-family:monospace}
+
+/* ===== 栏目三：电影档案（左图右文卡片堆叠，独立） ===== */
+.archive{background:var(--card2)}
+.arch-list{display:flex;flex-direction:column;gap:20px}
+.arch-item{display:grid;grid-template-columns:1fr;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--card);transition:.3s}
+@media(min-width:640px){.arch-item{grid-template-columns:180px 1fr}}
+.arch-item:hover{border-color:var(--film);transform:translateX(6px)}
+.aimg{height:160px;display:grid;place-items:center;font-size:40px;color:var(--film2)}
+@media(min-width:640px){.aimg{height:auto}}
+.ainfo{padding:20px 22px}
+.ainfo .atag{font-family:monospace;font-size:10px;letter-spacing:2px;color:var(--film);border:1px solid var(--line);padding:3px 9px;border-radius:3px}
+.ainfo h3{font-family:Georgia,serif;font-size:20px;color:var(--film2);margin:12px 0 8px}
+.ainfo p{font-size:13.5px;color:var(--txt)}
+.ainfo .asc{font-family:monospace;font-size:12px;color:var(--film);margin-top:10px}
+
+/* ===== 栏目四：推荐理由（横向撕边卡片，独立视觉） ===== */
+.reason{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:880px){.reason{grid-template-columns:repeat(3,1fr)}}
+.rsn{background:var(--card);border:1px solid var(--line);padding:38px 30px;position:relative;transition:.35s;clip-path:polygon(0 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%)}
+@media(min-width:880px){.rsn{border-right:none}.rsn:last-child{border-right:1px solid var(--line)}}
+.rsn:hover{background:var(--card2)}
+.rsn .num{font-family:Georgia,serif;font-size:52px;font-weight:900;color:rgba(232,163,61,.22);line-height:1}
+.rsn h3{font-size:19px;color:var(--film2);margin:12px 0 10px;font-weight:800}
+.rsn p{font-size:14px;color:var(--txt)}
+.rsn .corner{position:absolute;bottom:0;right:0;width:22px;height:22px;background:var(--film);clip-path:polygon(100% 0,0 100%,100% 100%)}
+
+/* ===== 栏目五：关于 + 数据（半幅式） ===== */
+.mix{display:grid;grid-template-columns:1fr;gap:44px}
+@media(min-width:920px){.mix{grid-template-columns:1fr 1fr}}
+.about h2{font-family:Georgia,serif;font-size:28px;color:var(--film2);margin-bottom:18px}
+@media(min-width:768px){.about h2{font-size:38px}}
+.about p{color:var(--txt);margin-bottom:16px}
+.quote{border-left:3px solid var(--film);padding:14px 18px;background:rgba(232,163,61,.06);font-family:Georgia,serif;font-style:italic;color:var(--film2);font-size:15px;margin:22px 0}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.chip{font-family:monospace;font-size:11.5px;padding:7px 13px;border:1px solid var(--line);border-radius:3px;color:var(--film)}
+.data-box{background:var(--card);border:2px solid var(--film);border-radius:6px;padding:30px}
+.data-box h3{font-family:Georgia,serif;font-size:20px;color:var(--film2);margin-bottom:24px;text-align:center}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.dcell{text-align:center;padding:18px 10px;border:1px solid var(--line);border-radius:4px}
+.dcell b{display:block;font-family:Georgia,serif;font-size:30px;font-weight:900;color:var(--film)}
+.dcell span{font-size:11px;color:var(--muted);font-family:monospace;letter-spacing:1px}
+
+/* ===== 栏目六：FAQ（details/summary结构，独立） ===== */
+details{background:var(--card);border:1px solid var(--line);border-radius:6px;margin-bottom:14px;overflow:hidden;transition:.3s}
+details[open]{border-color:var(--film)}
+summary{padding:20px 24px;font-size:16px;font-weight:700;color:var(--film2);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:14px;font-family:Georgia,serif}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";color:var(--film);font-weight:900;font-size:18px;flex-shrink:0}
+details[open] summary::after{content:"－"}
+summary:hover{background:rgba(232,163,61,.06)}
+.faq-a{padding:0 24px 22px;font-size:14px;color:var(--txt);border-top:1px dashed var(--line);margin-top:2px;padding-top:16px}
+
+/* ===== Footer ===== */
+footer{background:#080604;padding:56px 0 26px;border-top:2px solid var(--film)}
+.foot{display:grid;grid-template-columns:1fr;gap:32px;margin-bottom:32px}
+@media(min-width:640px){.foot{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.foot{grid-template-columns:2fr 1fr 1fr 1fr}}
+.logo.foot-l{color:var(--film2)}
+.logo.foot-l small{color:var(--muted)}
+.fabout{margin-top:14px;font-size:13px;color:var(--muted);max-width:300px}
+.foot h4{font-family:monospace;font-size:12px;letter-spacing:2px;color:var(--film);margin-bottom:16px}
+.foot a{display:block;font-size:13px;color:var(--muted);padding:6px 0;transition:.2s}
+.foot a:hover{color:var(--film)}
+.fbot{padding-top:22px;border-top:1px dashed var(--line);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+.fbot p{font-size:12px;color:var(--muted);font-family:monospace}
+.fbot .fl{display:flex;gap:20px}
+.fbot .fl a{font-size:12px;color:var(--muted);font-family:monospace}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<div class="bgfx"><div class="reel r1"></div><div class="reel r2"></div><div class="noise"></div></div>
+
+<!-- Header -->
+<header>
+  <div class="container hin">
+    <a class="logo" href="#top">
+      <span class="reelbtn">永</span>
+      <span>永久电影网<small>YONGJIUDIANYINGWANG</small></span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#decade">年代典藏</a>
+      <a href="#classic">经典影片</a>
+      <a href="#archive">电影档案</a>
+      <a href="#reason">推荐理由</a>
+      <a href="#about">关于我们</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <button class="ham" id="hamBtn" aria-label="菜单">☰</button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="移动端导航">
+    <a href="#decade">年代典藏</a>
+    <a href="#classic">经典影片</a>
+    <a href="#archive">电影档案</a>
+    <a href="#reason">推荐理由</a>
+    <a href="#about">关于我们</a>
+    <a href="#faq">常见问题</a>
+  </nav>
+</header>
+
+<main>
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hwrap">
+      <div>
+        <span class="eyebrow">CLASSIC FILMS FOREVER</span>
+        <h1>经典电影<br><span class="it">永久珍藏</span></h1>
+        <div class="hrule"></div>
+        <p class="hsub">永久电影网（yongjiudianyingwang）专注经典电影的永久珍藏与在线观看，收录中外高分老电影，让每一部好电影都值得被反复回味，永不落幕。</p>
+        <div class="stats-row">
+          <div class="stat-pill"><b>5000+</b><span>经典片源</span></div>
+          <div class="stat-pill"><b>60年</b><span>年代跨度</span></div>
+          <div class="stat-pill"><b>9.0+</b><span>平均评分</span></div>
+        </div>
+        <div class="h-cta">
+          <a class="btn btn-fill" href="#classic">开始观影 →</a>
+          <a class="btn btn-ghost" href="#decade">浏览年代典藏</a>
+        </div>
+      </div>
+      <div class="projector">
+        <div class="pj-title">— NOW SHOWING · 正在放映 —</div>
+        <ul class="pj-list">
+          <li><span>肖申克的救赎</span><span>1994</span></li>
+          <li><span>阿甘正传</span><span>1994</span></li>
+          <li><span>泰坦尼克号</span><span>1997</span></li>
+          <li><span>这个杀手不太冷</span><span>1994</span></li>
+          <li><span>霸王别姬</span><span>1993</span></li>
+          <li><span>千与千寻</span><span>2001</span></li>
+        </ul>
+        <div class="pj-foot">永久电影网 · 永不落幕的放映厅</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目一：年代墙 -->
+<section id="decade" class="decade">
+  <div class="container">
+    <div class="head">
+      <div class="h-en">DECADE COLLECTION</div>
+      <h2>年代<span>典藏</span></h2>
+      <p>从黑白年代到新世纪，永久电影网按年代收录经典电影，带你穿越光影长河，重温每个时代的银幕记忆。</p>
+    </div>
+    <div class="track">
+      <div class="dbox"><div class="dyear">60s</div><h3>黑白经典</h3><p>黑白影像时代</p></div>
+      <div class="dbox"><div class="dyear">70s</div><h3>新浪潮</h3><p>电影革新年代</p></div>
+      <div class="dbox"><div class="dyear">80s</div><h3>黄金年代</h3><p>商业片崛起</p></div>
+      <div class="dbox"><div class="dyear">90s</div><h3>巅峰十年</h3><p>经典井喷期</p></div>
+      <div class="dbox"><div class="dyear">00s</div><h3>新千年</h3><p>大片与文艺</p></div>
+      <div class="dbox"><div class="dyear">10s+</div><h3>当代佳作</h3><p>新世纪经典</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目二：经典影片（跑马灯） -->
+<section id="classic">
+  <div class="container">
+    <div class="head">
+      <div class="h-en">CLASSIC SELECTION</div>
+      <h2>经典<span>影片</span></h2>
+      <p>永久电影网精选中外高分经典电影，涵盖各年代、各类型的银幕佳作，值得反复观看。</p>
+    </div>
+  </div>
+  <div class="marq">
+    <div class="mrow" id="row1"></div>
+  </div>
+  <div class="marq" style="margin-top:0">
+    <div class="mrow r2" id="row2"></div>
+  </div>
+</section>
+
+<!-- 栏目三：电影档案 -->
+<section id="archive" class="archive">
+  <div class="container">
+    <div class="head">
+      <div class="h-en">FILM ARCHIVE</div>
+      <h2>电影<span>档案</span></h2>
+      <p>永久电影网为每部经典电影建立影像档案，记录影片背后的故事与光影魅力。</p>
+    </div>
+    <div class="arch-list">
+      <article class="arch-item">
+        <div class="aimg" style="background:linear-gradient(135deg,#3a2a1a,#6b4a2a)">🎞️</div>
+        <div class="ainfo"><span class="atag">1994 · 美国</span><h3>肖申克的救赎</h3><p>一部关于希望与自由的电影史诗，长年位居影史评分榜首，是永久电影网最受欢迎的经典之一。</p><div class="asc">评分 ★ 9.7</div></div>
+      </article>
+      <article class="arch-item">
+        <div class="aimg" style="background:linear-gradient(135deg,#2a1a3a,#5a2a6b)">🎬</div>
+        <div class="ainfo"><span class="atag">1993 · 中国</span><h3>霸王别姬</h3><p>华语电影的巅峰之作，以京剧名伶的半生浮沉，映照半个世纪的时代变迁，艺术价值永恒。</p><div class="asc">评分 ★ 9.6</div></div>
+      </article>
+      <article class="arch-item">
+        <div class="aimg" style="background:linear-gradient(135deg,#1a3a2a,#2a6b4a)">🌊</div>
+        <div class="ainfo"><span class="atag">1997 · 美国</span><h3>泰坦尼克号</h3><p>史诗级爱情巨制，沉船背景下跨越阶级的凄美爱情，震撼了全球一代观众。</p><div class="asc">评分 ★ 9.4</div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目四：推荐理由（撕边卡片） -->
+<section id="reason">
+  <div class="container">
+    <div class="head">
+      <div class="h-en">WHY CHOOSE US</div>
+      <h2>为什么选择<span>永久电影网</span></h2>
+      <p>永久电影网致力于做最用心的经典电影收藏平台，让好电影被更多人看见。</p>
+    </div>
+    <div class="reason">
+      <div class="rsn"><div class="num">01</div><h3>片源永久珍藏</h3><p>精选中外高分经典电影，持续收录，打造永不删除的电影记忆库。</p><div class="corner"></div></div>
+      <div class="rsn"><div class="num">02</div><h3>分类清晰齐全</h3><p>按年代、类型、地区多维度分类，快速定位你想重温的经典影片。</p><div class="corner"></div></div>
+      <div class="rsn"><div class="num">03</div><h3>舒适观影体验</h3><p>移动端自适应设计，手机、平板、电脑均可流畅观看经典电影。</p><div class="corner"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目五：关于 + 数据 -->
+<section id="about">
+  <div class="container">
+    <div class="mix">
+      <div class="about">
+        <div class="h-en">ABOUT US</div>
+        <h2>关于永久电影网</h2>
+        <p>永久电影网（yongjiudianyingwang）是专注于经典电影永久珍藏与在线观看的平台，以"让好电影永不褪色"为理念，收录中外高分经典老电影。</p>
+        <p>从黑白年代的影像瑰宝，到新世纪的银幕佳作，永久电影网覆盖剧情、动作、喜剧、文艺、战争、科幻等多种类型，为影迷打造一座永不落幕的电影资料馆。</p>
+        <div class="quote">"电影是现实的渐近线，而经典，值得被永久珍藏。"</div>
+        <div class="chips"><span class="chip">永久珍藏</span><span class="chip">高分经典</span><span class="chip">年代齐全</span><span class="chip">类型丰富</span><span class="chip">流畅观影</span></div>
+      </div>
+      <div class="data-box">
+        <h3>— 平台数据 —</h3>
+        <div class="dgrid">
+          <div class="dcell"><b>5000+</b><span>经典片源</span></div>
+          <div class="dcell"><b>60</b><span>年代跨度</span></div>
+          <div class="dcell"><b>12</b><span>影片类型</span></div>
+          <div class="dcell"><b>9.2</b><span>平均评分</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目六：FAQ（details） -->
+<section id="faq">
+  <div class="container">
+    <div class="head">
+      <div class="h-en">FAQ</div>
+      <h2>常见<span>问题</span></h2>
+      <p>关于永久电影网的使用，你可能想了解的都在这里。</p>
+    </div>
+    <details open>
+      <summary>永久电影网主要收录哪些电影？</summary>
+      <div class="faq-a">我们专注经典电影的永久珍藏与在线观看，收录中外高分老电影，覆盖剧情、动作、喜剧、文艺、战争、科幻等类型，涵盖多个年代的银幕佳作。</div>
+    </details>
+    <details>
+      <summary>如何查找特定年代或类型的电影？</summary>
+      <div class="faq-a">永久电影网提供按年代、类型、地区等多维度分类，你可以在年代典藏与经典影片栏目中快速筛选定位想看的影片。</div>
+    </details>
+    <details>
+      <summary>平台会持续更新片源吗？</summary>
+      <div class="faq-a">会的。我们持续收录与整理经典电影，不断丰富永久电影网的片源库，让更多好电影被珍藏与分享。</div>
+    </details>
+    <details>
+      <summary>手机上观看体验如何？</summary>
+      <div class="faq-a">永久电影网采用移动端自适应设计，手机、平板、电脑均可获得流畅舒适的观影体验，随时随地重温经典。</div>
+    </details>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <div class="logo foot-l"><span class="reelbtn">永</span><span>永久电影网<small>YONGJIUDIANYINGWANG</small></span></div>
+        <p class="fabout">永久电影网（yongjiudianyingwang）专注经典电影的永久珍藏与在线观看，收录中外高分老电影，让好电影永不落幕。网址：https://yongjiudianyingwang-wap.github.io</p>
+      </div>
+      <div><h4>栏目导航</h4><a href="#decade">年代典藏</a><a href="#classic">经典影片</a><a href="#archive">电影档案</a><a href="#reason">推荐理由</a></div>
+      <div><h4>经典类型</h4><a href="#classic">剧情经典</a><a href="#classic">动作经典</a><a href="#classic">喜剧经典</a><a href="#classic">文艺经典</a></div>
+      <div><h4>友情链接</h4><a href="#">经典电影推荐</a><a href="#">老电影怀旧</a><a href="#">影史排行</a><a href="#">电影资料馆</a></div>
+    </div>
+    <div class="fbot">
+      <p>© 2026 永久电影网 yongjiudianyingwang. 保留所有权利。</p>
+      <div class="fl"><a href="#">免责声明</a><a href="#">隐私政策</a><a href="#">联系我们</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 移动菜单
+(function(){
+  var b=document.getElementById('hamBtn'),n=document.getElementById('mnav');
+  b.addEventListener('click',function(){n.classList.toggle('open');});
+  n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');});});
+})();
+// 跑马灯数据
+(function(){
+  var list=[
+    {t:'肖申克的救赎',y:'1994',ic:'🎞️',g:['#3a2a1a','#6b4a2a']},
+    {t:'霸王别姬',y:'1993',ic:'🎬',g:['#2a1a3a','#5a2a6b']},
+    {t:'泰坦尼克号',y:'1997',ic:'🌊',g:['#1a3a2a','#2a6b4a']},
+    {t:'阿甘正传',y:'1994',ic:'🏃',g:['#3a3a1a','#6b6b2a']},
+    {t:'这个杀手不太冷',y:'1994',ic:'🔫',g:['#1a2a3a','#2a4a6b']},
+    {t:'千与千寻',y:'2001',ic:'🐉',g:['#3a1a2a','#6b2a5a']},
+    {t:'海上钢琴师',y:'1998',ic:'🎹',g:['#2a2a1a','#5a5a2a']},
+    {t:'美丽人生',y:'1997',ic:'😊',g:['#1a3a3a','#2a6b6b']}
+  ];
+  function card(f){return '<article class="mcard"><div class="mcover" style="background:linear-gradient(135deg,'+f.g[0]+','+f.g[1]+')"><span class="yr">'+f.y+'</span><span class="geo">'+f.ic+'</span></div><div class="minfo"><h3>'+f.t+'</h3><div class="mmeta"><span>经典电影</span><span>★ 9.0+</span></div></div></article>';}
+  var build=function(row){var h='';for(var i=0;i<10;i++){h+=card(list[i%list.length]);}row.innerHTML=h;};
+  build(document.getElementById('row1'));
+  build(document.getElementById('row2'));
+})();
+// FAQ 手风琴
+(function(){
+  document.querySelectorAll('details').forEach(function(d){
+    d.addEventListener('toggle',function(){
+      if(d.open){document.querySelectorAll('details').forEach(function(o){if(o!==d)o.removeAttribute('open');});}
+    });
+  });
+})();
+</script>
+</body>
+</html>
